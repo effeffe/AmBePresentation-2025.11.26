@@ -227,7 +227,7 @@ Aim: make the simulation as accurate as possible, efficient, open-source, comple
 
 
 \begin{frame}\frametitle{Differential cross-section contribution}
-%Anisotropical approach proposed in 1960s, works pretty well
+%In doing this, we can see that the differential cross section approach is at the core of the issue. Here there are displayed the same initial neutrons spectra, yet one ignores differential cross sections and the other one implements them. The difference is staggering and explains why this approach is required.
 \begin{columns}
 	\begin{column}[b]{0.5\linewidth}
 		\centering
@@ -244,6 +244,7 @@ Aim: make the simulation as accurate as possible, efficient, open-source, comple
 
 
 \begin{frame}\frametitle{Disadvantages}
+%There are nevertheless some disadvantages related to the cross sections, in particular differential cross sections, not being available for beryllium breakup. For this reason, we are ignoring any (a,a') and (a,n) reactions, as we are not simulating any alphas for geant4 to transport. Similarly, we are also lacking the angular decay information for 9Be neutron decaying, as well as cross sections for the 9Be to 5He process. All that we simulate is neutrons, hence any break-up neutrons we are going to have are due to (n,2n) reactions.
 \begin{minipage}{\textwidth}
 	Differential and Integrated cross section of beryllium-9 break-up not available
 	\begin{itemize}
@@ -261,15 +262,16 @@ Aim: make the simulation as accurate as possible, efficient, open-source, comple
 \section*{Emerging Neutrons}
 
 \begin{frame}\frametitle{Simulation Results - Emerging Neutrons}
-	\centering
-	Neutrons emerging from source casing (simulation)
-	\centering
-	\includegraphics[width=0.9\linewidth]{Fig10.1-EmergingNeutrons20251105.png}
+%We can here see the emerging neutrons from the source, mapped for carbon excitation region
+\centering
+Neutrons emerging from source casing (simulation)
+\centering
+\includegraphics[width=0.9\linewidth]{Fig10.1-EmergingNeutrons20251105.png}
 \end{frame}
 
 
 \begin{frame}\frametitle{Simulation Results - Fission and Break-up Neutrons}
-%Here are shown secondary neutrons and fission neutrons emerging from the source casing. Secondaries mostly include (n,2n) reactions. Fission neutrons follow the Watt-fission distribution, have a high Q value that can be in excess of 200~MeV and result in neutron up to 22~MeV being created
+%And here the secondary neutrons and fission neutrons emerging from the source casing. Secondaries mostly include (n,2n) reactions. Fission neutrons follow the Watt-fission distribution, have a high Q value that can be in excess of 200~MeV and result in neutron up to 22~MeV being created
 	\centering
 	Fission and break-up neutrons emerging from the source material
 	\centering
@@ -278,19 +280,20 @@ Aim: make the simulation as accurate as possible, efficient, open-source, comple
 
 
 \begin{frame}\frametitle{Simulation Results - AmBe carbon $\gamma$}
-%Here we can see that the first and second excited states of carbon are being produced, with Doppler shifting. The production ratio matches cross section values of 26:10:64=n0:n1:n2 wrt to initial neutrons
+%Then we have the carbon gammas being created. These are Doppler shifter as carbon decays in flight. The production ratio matches cross section values of 26:10:64=n0:n1:n2 wrt to initial neutrons
 	\centering
 	\includegraphics[width=\linewidth]{Fig12.1-secondaryGammas}
 \end{frame}
 
-\section*{Model Comparison}
-\begin{frame}\frametitle{Comparison with Geant4 NeutronSource example}
-	%And eventually we can see it is very different now, with more defined peaks
-	\includegraphics[width=0.9\linewidth]{Fig14.1-EmergingNeutronsvsGeant.pdf}
-\end{frame}
+%\section*{Model Comparison}
+%\begin{frame}\frametitle{Comparison with Geant4 NeutronSource example}
+%And eventually we can see it is very different now, with more defined peaks
+%\includegraphics[width=0.9\linewidth]{Fig14.1-EmergingNeutronsvsGeant.pdf}
+%\end{frame}
+
 \begin{frame}\frametitle{Model comparison}
 %spend 2-3 minutes on this
-%The simulation matches esperimental results pretty well, especially between 1 and 6 MeV. Below 1 MeV we still have a good match with experimental results, in spite of not simualting any (a,n)/(a,*) reaction. Above 6 MeV, the difference of ouyr yields with experimental ones are due to low accuracy cross sections for the n0 region. Nevertheless, the means match pretty well with experimental results. It is visible it is a great improvement compared to other simulations (Nedis serpent in green and Sources5A in yellow).
+%Focusing on the emerging neutrons, we can compare these with other results, experimental and simulated. Our simulation matches experimental results pretty well, especially between 1 and 6 MeV. Below 1 MeV we still have a good match with experimental results, in spite of not simualting any (a,n)/(a,*) reaction. Above 6 MeV, the difference of ouyr yields with experimental ones are due to low accuracy cross sections for the n0 region. Nevertheless, the means match pretty well with experimental results. It is visible it is a great improvement compared to other simulations (Nedis serpent in green and Sources5A in yellow).
 	\centering
 	Comparison with AmBe standards
 	\centering
@@ -299,6 +302,8 @@ Aim: make the simulation as accurate as possible, efficient, open-source, comple
 
 \section*{Conclusion}
 \begin{frame}\frametitle{Conclusion}
+%
+%Link with AmBe Bath application, analysis for neutron moderation
 \begin{itemize}
 	\item Validated AmBe neutron spectrum in Geant4
 	\item Correctly reproduced AmBe signature peaks
@@ -306,7 +311,6 @@ Aim: make the simulation as accurate as possible, efficient, open-source, comple
 	\item Faster execution than full $^{241}\text{Am}$ $\alpha$-decay chain recreation
 	\item Useful for analysis of flux and neutron moderation in various media
 	\item Future analysis of neutron moderation in water bath
-	%TODO: talk about so what, what to do with this now. Why is this useful
 \end{itemize}
 \centering
 ~\\Thank you for listening
@@ -340,6 +344,102 @@ Backup Slides
 		\item Source is at centre of 1~m tall, 1~m diameter water tank. The moderation profile is unknown
 	\end{itemize}
 	%In particular, experimental results from undergraduates disagree with the theroetical data [Lamar Baratta]
+\end{frame}
+
+\begin{frame}\frametitle{Current analysis}
+	%verification of simulated data
+	%BF3/He3 measurements for 2 group\\
+	%hpGe efficiency scaling and calculation for dose\\
+	\begin{figure}
+		\centering
+		
+		\begin{tikzpicture}[thick,scale=0.3, every node/.style={scale=0.6}]
+			\begin{pgfonlayer}{nodelayer}
+				\node [style=none] (0) at (-6, 0) {};
+				\node [style=none] (1) at (0, 6) {};
+				\node [style=none] (2) at (0, -6) {};
+				\node [style=none] (3) at (6, 0) {};
+				\node [style=none] (4) at (0.25, 0) {};
+				\node [style=none] (5) at (-0.25, 0) {};
+				\node [style=none] (6) at (0, 0) {};
+				
+				\node [style=none] (7) at (1, 0.125) {};
+				\node [style=none] (8) at (1.25, 0.125) {};
+				\node [style=none] (9) at (1, -0.125) {};
+				\node [style=none] (10) at (1.25, -0.125) {};
+				
+				\node [style=none] (11) at (1.75, 0.125) {};
+				\node [style=none] (12) at (2, 0.125) {};
+				\node [style=none] (13) at (1.75, -0.125) {};
+				\node [style=none] (14) at (2, -0.125) {};
+				
+				\node [style=none] (15) at (2.5, 0.125) {};
+				\node [style=none] (16) at (2.75, 0.125) {};
+				\node [style=none] (17) at (2.5, -0.125) {};
+				\node [style=none] (18) at (2.75, -0.125) {};
+				
+				\node [style=none] (19) at (3.25, 0.125) {};
+				\node [style=none] (20) at (3.5, 0.125) {};
+				\node [style=none] (21) at (3.25, -0.125) {};
+				\node [style=none] (22) at (3.5, -0.125) {};
+				
+				\node [style=none] (23) at (4.25, 0.125) {};
+				\node [style=none] (24) at (4, 0.125) {};
+				\node [style=none] (25) at (4.25, -0.125) {};
+				\node [style=none] (26) at (4, -0.125) {};
+				
+				\node [style=none] (27) at (5.0, 0.125) {};
+				\node [style=none] (28) at (4.75, 0.125) {};
+				\node [style=none] (29) at (5.0, -0.125) {};
+				\node [style=none] (30) at (4.75, -0.125) {};
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{edgelayer}
+				\draw [bend left=45] (0.center) to (1.center);
+				\draw [bend right=45] (3.center) to (1.center);
+				\draw [bend right=45] (2.center) to (3.center);
+				\draw [bend left=45] (2.center) to (0.center);
+				\draw [bend left=90, looseness=1.75] (5.center) to (4.center);
+				\draw [bend right=90, looseness=1.75] (5.center) to (4.center);
+				\draw [style=arrow - dark green] (6.center) to (3.center);
+				\draw [style=grey] (7.center)
+				to (9.center)
+				to (10.center)
+				to (8.center)
+				to cycle;
+				\draw [style=grey] (11.center)
+				to (13.center)
+				to (14.center)
+				to (12.center)
+				to cycle;
+				\draw [style=grey] (15.center)
+				to (17.center)
+				to (18.center)
+				to (16.center)
+				to cycle;
+				\draw [style=grey] (19.center)
+				to (21.center)
+				to (22.center)
+				to (20.center)
+				to cycle;
+				\draw [style=grey] (23.center)
+				to (25.center)
+				to (26.center)
+				to (24.center)
+				to cycle;
+				\draw [style=grey] (27.center)
+				to (29.center)
+				to (30.center)
+				to (28.center)
+				to cycle;
+			\end{pgfonlayer}
+		\end{tikzpicture}
+	\end{figure}
+	\begin{itemize}
+		\item Experimental $\text{BF}_3$ and $^3\text{He}$ flux to extrapolate neutron age and thermal diffusion length
+		\item $\gamma$ spectrum from AmBe using hpGe for to verify production rate of fission products and dose rate
+	\end{itemize}
+	\centering
+	Measurements ongoing...
 \end{frame}
 
 \begin{frame}\frametitle{Two group model}
