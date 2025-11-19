@@ -11,6 +11,8 @@
 \input{sample.tikzdefs}
 \usepackage[skip=0pt]{caption}
 
+\usepackage{overpic}
+
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{mathtools}
@@ -56,19 +58,18 @@
 %
 \logo{\includegraphics[scale=0.05]{Fig0-BhamCrest.png}}
 
-\begin{document}
 \title[AmBeSim] %optional
-{{Simulation of a $^{241}\text{Am}-^{9}\text{Be}$ neutron source using Geant4}}
+{\texorpdfstring{{Simulation of a $^{241}\text{Am}-^{9}\text{Be}$ neutron source using Geant4}}{Simulation of a ²⁴¹Am-⁹Be neutron source using Geant4}}
 
-\author[Filippo~Falezza] % (optional, for multiple authors)
-{\textbf{Filippo~Falezza}, J.~Bishop, Tz.~Kokalova, C.~Wheldon, S.~Pirrie, M.~Conroy, N.~Curtis\\ \large{\color{darkblue2}University~of~Birmingham, UK\color{black}}}
+\author[Filippo~Falezza]
+{\textbf{Filippo~Falezza}, J.~Bishop, Tz.~Kokalova, C.~Wheldon, S.~Pirrie, M.~Conroy, N.~Curtis\texorpdfstring{\\ \large{\color{darkblue2}University~of~Birmingham, UK\color{black}}}{University~of~Birmingham}}
 
 \date[date] % (optional)
 {26$^{\mathrm{th}}$ November 2025 - Neutron User Club @ NPL}%OK
 %---------------------%
 
+\begin{document}
 \frame{\titlepage}
-
 
 \begin{frame}\frametitle{$^{241}$Am-$^9$Be Neutron source}
 WHY DO WE NEED THIS??? HOW DOES THIS CONTRIBUTION MAKE NEUTRON USERS LIFE BETTER AND EASIER???
@@ -139,7 +140,19 @@ No accurate simulation from first principles
 
 \begin{frame}\frametitle{Reactions of interest}
 	\centering
-	\includegraphics[width=\linewidth]{Fig4.1-AmBe-Processes-landscape}
+	%\includegraphics[width=\linewidth]{Fig4.1-AmBe-Processes-landscape}
+	\begin{overpic}[width=\linewidth,keepaspectratio]{Fig4.1-AmBe-Processes-landscape}
+	\put(-2,32){$^9\text{Be}(\alpha,n)^{12}\text{C}$ --- Q$=+5.702$~MeV}
+	\put(60,10){
+		$\left.\begin{aligned}
+			^9\text{Be}(\alpha,\alpha')\\
+			^9\text{Be}(n,n')
+		\end{aligned}\right\rbrace$
+		$^{9}\text{Be}^* \rightarrow^8\text{Be}/2\alpha+n$
+	}
+	\put(70,3){--- Q$=-1.665$~MeV}
+	\put(60,48){$^{241}\text{Am}(n,f)$ --- Q$\geq200$~MeV}
+\end{overpic}
 %Explain processes, in particular break-up and fission (on average 3 neutrons)
 %Don't talk about energy
 %Join fast process with next slide
@@ -257,7 +270,7 @@ Aim: make the simulation as accurate as possible while reducing inefficiencies
 	\centering
 	Neutrons emerging from source casing (simulation)
 	\centering
-	\includegraphics[width=0.9\linewidth]{EmergingNeutrons20250402.png}
+	\includegraphics[width=0.9\linewidth]{Fig10.1-EmergingNeutrons20251105.png}
 \end{frame}
 
 
@@ -320,10 +333,9 @@ Aim: make the simulation as accurate as possible while reducing inefficiencies
 \end{frame}
 
 
-\section*{}%Backup slides
 \appendix
-\begin{frame}
-~
+\section*{Backup Slides}%Backup slides
+\begin{frame}\frametitle{~}
 Backup Slides
 \end{frame}
 
