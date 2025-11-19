@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
-   sodipodi:docname="Fig2-AmBe-Processes-landscape.svg"
+   sodipodi:docname="Fig4.1-AmBe-Processes-landscape.svg"
    inkscape:export-filename="Fig2-AmBe-Processes-inkscape.png"
    inkscape:export-xdpi="600"
    inkscape:export-ydpi="600"
@@ -28,8 +28,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.0553764"
-     inkscape:cx="151.60468"
-     inkscape:cy="229.77585"
+     inkscape:cx="174.81915"
+     inkscape:cy="442.96992"
      inkscape:window-width="2560"
      inkscape:window-height="1412"
      inkscape:window-x="0"
@@ -5957,6 +5957,16 @@
        y1="96.186409"
        x2="191.54709"
        y2="96.186409" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4"
+       id="linearGradient187"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(751.00964,35.110336)"
+       x1="171.38535"
+       y1="96.186409"
+       x2="191.54709"
+       y2="96.186409" />
   </defs>
   <g
      inkscape:label="General"
@@ -5969,7 +5979,7 @@
        cy="355.41226"
        rx="12.179954"
        ry="12.399368"
-       inkscape:export-filename="Fig2-AmBe-Processes-landscape.png"
+       inkscape:export-filename="Fig4.1-AmBe-Processes-landscape.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <ellipse
@@ -6095,6 +6105,13 @@
        rx="10.080873"
        ry="10.416903" />
     <ellipse
+       style="fill:url(#linearGradient187)"
+       id="path1-4-6-5-6"
+       cx="932.47595"
+       cy="131.29675"
+       rx="10.080873"
+       ry="10.416903" />
+    <ellipse
        style="fill:url(#linearGradient262)"
        id="path1-4-5"
        cx="342.88712"
@@ -6122,7 +6139,7 @@
        transform="translate(314.43786,-31.466316)"><tspan
          x="88.865234"
          y="202.15456"
-         id="tspan16">n</tspan></text>
+         id="tspan1">n</tspan></text>
     <text
        xml:space="preserve"
        id="text226-1"
@@ -6130,7 +6147,7 @@
        transform="translate(248.36023,-74.597408)"><tspan
          x="88.865234"
          y="202.15456"
-         id="tspan17">n</tspan></text>
+         id="tspan2">n</tspan></text>
     <text
        xml:space="preserve"
        id="text227"
@@ -6142,7 +6159,7 @@
        transform="translate(435.99409,204.89466)"><tspan
          x="88.865234"
          y="202.15456"
-         id="tspan18">n</tspan></text>
+         id="tspan3">n</tspan></text>
     <text
        xml:space="preserve"
        id="text226-13"
@@ -6150,7 +6167,7 @@
        transform="translate(787.61598,-23.211746)"><tspan
          x="88.865234"
          y="202.15456"
-         id="tspan19">Fission n</tspan></text>
+         id="tspan4">Fission n</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.0222px;font-family:'Libertinus Serif';-inkscape-font-specification:'Libertinus Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-linecap:round;stroke-linejoin:miter;paint-order:normal"
@@ -6191,11 +6208,11 @@
        transform="translate(429.50956,-8.9116058)"><tspan
          x="426.75781"
          y="46.193622"
-         id="tspan20">Fission
+         id="tspan5">Fission
 </tspan><tspan
          x="426.75781"
          y="69.97137"
-         id="tspan21">fragment</tspan></text>
+         id="tspan6">fragment</tspan></text>
     <text
        xml:space="preserve"
        id="text413-6"
@@ -6203,11 +6220,11 @@
        transform="translate(423.45041,176.39656)"><tspan
          x="426.75781"
          y="46.193622"
-         id="tspan22">Fission
+         id="tspan7">Fission
 </tspan><tspan
          x="426.75781"
          y="69.97137"
-         id="tspan23">fragment</tspan></text>
+         id="tspan8">fragment</tspan></text>
     <text
        xml:space="preserve"
        id="text415"
@@ -6215,7 +6232,7 @@
        transform="translate(-18.913457,-52.850957)"><tspan
          x="349.4707"
          y="103.9905"
-         id="tspan24">¹²C</tspan></text>
+         id="tspan9">¹²C</tspan></text>
     <text
        xml:space="preserve"
        id="text416-0"
@@ -6223,7 +6240,7 @@
        transform="translate(1.7973107,263.29217)"><tspan
          x="182.12695"
          y="148.34597"
-         id="tspan25">⁹Be</tspan></text>
+         id="tspan10">⁹Be</tspan></text>
     <text
        xml:space="preserve"
        id="text417"
@@ -6231,7 +6248,7 @@
        transform="translate(-6.6953412,78.336337)"><tspan
          x="393.82617"
          y="274.02175"
-         id="tspan26">⁹Be*</tspan></text>
+         id="tspan11">⁹Be*</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow)"
        d="M 70.437942,46.565141 146.38053,45.893083"
@@ -6292,9 +6309,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect432);display:inline;fill:#000000;fill-opacity:1;stroke-linecap:round;stroke-linejoin:miter;paint-order:normal"><tspan
          x="343.42188"
          y="408.2706"
-         id="tspan28"><tspan
+         id="tspan13"><tspan
            dx="0 13.175995 11.519989 13.46402 8.6640015 8.6640015 13.53598 9.4319916 13.53598 14.759995"
-           id="tspan27">Scattered </tspan></tspan></text>
+           id="tspan12">Scattered </tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text433"
@@ -6302,7 +6319,7 @@
        transform="translate(-29.869515,80.604637)"><tspan
          x="327.96484"
          y="371.46901"
-         id="tspan29">Scattered α/n</tspan></text>
+         id="tspan14">Scattered α/n</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker426)"
        d="M 66.862689,359.5442 351.14334,413.98092"
@@ -6385,7 +6402,7 @@
        transform="translate(-16.913457,-58.850957)"><tspan
          x="182.12695"
          y="148.34597"
-         id="tspan30">⁹Be</tspan></text>
+         id="tspan15">⁹Be</tspan></text>
     <ellipse
        style="fill:url(#linearGradient244)"
        id="path1-1-3-6-1-2"

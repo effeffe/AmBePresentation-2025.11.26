@@ -72,7 +72,8 @@
 \frame{\titlepage}
 
 \begin{frame}\frametitle{$^{241}$Am-$^9$Be Neutron source}
-WHY DO WE NEED THIS??? HOW DOES THIS CONTRIBUTION MAKE NEUTRON USERS LIFE BETTER AND EASIER???
+%After intro of title
+%AmBe sources are neutron sources with a long half life...
 Long half life and stable flux over a 10 - 15 year working life\\
 Plethora of uses:
 \begin{itemize}
@@ -82,13 +83,13 @@ Plethora of uses:
 	\item Calibration (dosimeters and detectors) %using well known energies of certain peaks
 	\item Industrial (e.g. well logging via $^1\text{H}(n,\gamma)^2\text{H}$) %moisture 
 \end{itemize}
-No accurate simulation from first principles
+%Its utility makes it important to have an open source simulation, which is as precise and comprehensive as possible. Currently there ar eno accurate open source simulations, and other closed-source simulations are not flexible nor as accurate as we would like
+No accurate open source simulation - others are suboptimal
 \end{frame}
 
 \section*{Theoretical Framework}
-
-
 \begin{frame}\frametitle{Reaction of Interest}	
+%AmBe sources are composed of [...] The reaction of interest is [...], which proceeds with a Q value of. The generated 12C can be in either ground, first or Hoyle state, depending on the initial alpha energy, cross sections and neutron energy. An example casing is here depicted, with a screw hole at the top and the AmBe mixture in red
 \begin{columns}[T]
 \begin{column}{0.7\textwidth}
 	Mixture of $\text{AmO}_2$ and $^9\text{Be}$ powder. $>99\%~~^{241}\text{Am}$\\
@@ -126,7 +127,7 @@ No accurate simulation from first principles
 	\end{tikzpicture}
 	\newline
 	\raggedright
-	$^{12}\text{C}$ can be either in ground, $1^\text{st}$, $2^\text{nd}$ (Hoyle) excited depending on incoming energy
+	$^{12}\text{C}$ can be either in ground, $1^\text{st}$, $2^\text{nd}$ (Hoyle) excited state
 \end{column}
 
 \begin{column}{0.3\textwidth}
@@ -139,6 +140,7 @@ No accurate simulation from first principles
 
 
 \begin{frame}\frametitle{Reactions of interest}
+%The reaction of interest is here depicted. Other reactions of interest are Beryllium break-up, either by incident $\alpha$ or n, yielding $^9$Be in excited state which then further neutron decays. Fission neutrons are present too, with an average of 4 neutrons per fission event being produced and a Q value in excess of 200~MeV.
 	\centering
 	%\includegraphics[width=\linewidth]{Fig4.1-AmBe-Processes-landscape}
 	\begin{overpic}[width=\linewidth,keepaspectratio]{Fig4.1-AmBe-Processes-landscape}
@@ -153,16 +155,11 @@ No accurate simulation from first principles
 	\put(70,3){--- Q$=-1.665$~MeV}
 	\put(60,48){$^{241}\text{Am}(n,f)$ --- Q$\geq200$~MeV}
 \end{overpic}
-%Explain processes, in particular break-up and fission (on average 3 neutrons)
-%Don't talk about energy
-%Join fast process with next slide
 \end{frame}
 
 
 \begin{frame}\frametitle{Fast reaction}
-%Talk about carbon states populated and subsequent gammas being emitted
-%These kinematically map to 3 regions
-%n0,n1,n2 refer to carbon state
+%REgarding the fast reactions, as we said this can populate excited states of carbon, which then decay emitting 4.4 and 3.2 gammas. These excited states kinematically map to 3 regions, i.e. the higher energy is n0, then n2 and then n2 foing towards 0. Breakup reactions contribute to the 0 to 1 MeV region, and fission neutron can contribute to the entire spectrum range.
 \begin{columns}[T]
 \begin{column}{0.7\textwidth}
 	\centering
@@ -180,6 +177,7 @@ AmBe neutron distribution per $^{12}\text{C}$ state [Geiger-Van Der Zwan 1975]
 
 \section*{Current Status}
 \begin{frame}\frametitle{Current status}
+%Currently, there is an AmBe simulation, whihc simulates $^{241}$Am decay emitting $\alphas$ interacting with beryllium. The issue is, Geant4 lacks differential cross sections and hence crucial features are lacking from the resulting neutron spectrum.
 \begin{itemize}
 		\item Geant4 has built in example in extended/hadronic/NeutronSource
 		\item Simulates $^{241}\text{Am}$ $\alpha$-decay
@@ -195,18 +193,15 @@ Geant4 extended/hadronic/NeutronSource example
 
 \section*{Primary Generator}
 \begin{frame}\frametitle{Implementation}
-Aim: make the simulation as accurate as possible while reducing inefficiencies
+%For this reason, we want to make a simulation that is as accurate as possible, efficient, is comprehensive of the reactions occouring and is open-source, so that it can be used for a plethora of applications. For this reason, we chose to directly simulate the neutron and carbon-ion from the fast process, which makes simulations a lot faster considering an emission of 2.27E6 fast neutron per curie per second. This way, we spare about 16300 null events per emerging neutron. We implement this via rejection sampling techniques, adopting integrated cross-sections and differential cross sections in the form of Legendre polynomials from Geiger and van Der Zwan data from 1970 to 1976.
+Aim: make the simulation as accurate as possible, efficient, open-source, complete
 \begin{itemize}
 	\item Simulate $n$ and $^{12}\text{C}$ directly\\
 	High activity sources $\Rightarrow$ $2.27\times10^6$ fast neutrons/s/Ci\\
-	Simulate one fast neutron per event vs one neutron every $\approx~17000$ events using $\alpha$ decay method
-	\item Rejection sampling techniques%iteratively generate randomised data and accept those within our defined XS and diff XS distributions
-	\item Integrated and differential cross section from 1970 and 1975 Geiger and Van Der Zwan for $^{9}\text{Be}(\alpha,n)^{12}\text{C}$
-	
+	Simulate one fast neutron per event vs one neutron every $\approx~16300$ events using $\alpha$ decay method
+	\item Rejection sampling technique
+	\item Integrated cross-section (1970) and Legendre polynomials for differentials (1975,1976 Geiger and Van Der Zwan) for fast neutron reaction
 \end{itemize}
-~\newline
-	%How does it work?say geant doesn't have diff Xs, we do.
-%Rejection sampling is good
 \end{frame}
 
 
@@ -232,24 +227,23 @@ Aim: make the simulation as accurate as possible while reducing inefficiencies
 
 
 \begin{frame}\frametitle{Differential cross-section contribution}
-	%Anisotropical approach proposed in 1960s, works pretty well
-	\begin{columns}
-		\begin{column}[b]{0.5\linewidth}
-			\centering
-			\includegraphics[width=\textwidth]{Fig8.1-AmBeInitialNeutrons100s_isotropic}
-			Initial neutrons: without differential cross-sections model
-		\end{column}
-		\begin{column}[b]{0.5\linewidth}
-			\centering
-			\includegraphics[width=\textwidth]{Fig8.2-AmBeInitialNeutrons100s_anisotropic}
-			Initial neutrons: with differential cross-sections model
-		\end{column}
-	\end{columns}
+%Anisotropical approach proposed in 1960s, works pretty well
+\begin{columns}
+	\begin{column}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Fig8.1-AmBeInitialNeutrons100s_isotropic}
+		Initial neutrons: without differential cross-sections model
+	\end{column}
+	\begin{column}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{Fig8.2-AmBeInitialNeutrons100s_anisotropic}
+		Initial neutrons: with differential cross-sections model
+	\end{column}
+\end{columns}
 \end{frame}
 
 
 \begin{frame}\frametitle{Disadvantages}
-%NOTE: D is diffusion coefficient, good to know but closely related to the diffusion length via the macroscopic absorbtion cross section
 \begin{minipage}{\textwidth}
 	Differential and Integrated cross section of beryllium-9 break-up not available
 	\begin{itemize}
@@ -275,58 +269,44 @@ Aim: make the simulation as accurate as possible while reducing inefficiencies
 
 
 \begin{frame}\frametitle{Simulation Results - Fission and Break-up Neutrons}
-%Watt-fissiom distribution correctly shown
-%Q value>200~MeV
-%fission products being created up to 22~MeV
+%Here are shown secondary neutrons and fission neutrons emerging from the source casing. Secondaries mostly include (n,2n) reactions. Fission neutrons follow the Watt-fission distribution, have a high Q value that can be in excess of 200~MeV and result in neutron up to 22~MeV being created
 	\centering
 	Fission and break-up neutrons emerging from the source material
 	\centering
 	\includegraphics[width=0.9\linewidth]{Fig10-Secondaries_20251020}
-%
-%produced inside the source
-%Wendt-fission distribution,
-%production up to 22 MeV
-%Q values up to 200~MeV
-%
 \end{frame}
 
 
 \begin{frame}\frametitle{Simulation Results - AmBe carbon $\gamma$}
-%DONE: TODO: replace with Carbon plot run without water
-	\centering
-	%Secondary $\gamma$ produced per event ~~---~~ $^{241}\text{Am}$ $\gamma$ disabled to increase efficiency
+%Here we can see that the first and second excited states of carbon are being produced, with Doppler shifting. The production ratio matches cross section values of 26:10:64=n0:n1:n2 wrt to initial neutrons
 	\centering
 	\includegraphics[width=\linewidth]{Fig12.1-secondaryGammas}
 \end{frame}
 
 \section*{Model Comparison}
+\begin{frame}\frametitle{Comparison with Geant4 NeutronSource example}
+	%And eventually we can see it is very different now, with more defined peaks
+	\includegraphics[width=0.9\linewidth]{Fig14.1-EmergingNeutronsvsGeant.pdf}
+\end{frame}
 \begin{frame}\frametitle{Model comparison}
-%Hoover quickly over shapes and features
-%Don't say you have no idea why 7 MeV lower (n0 region)
 %spend 2-3 minutes on this
-%highlight differences in region,
-%mention meas are correct
-%good similarity to iso8529-1
+%The simulation matches esperimental results pretty well, especially between 1 and 6 MeV. Below 1 MeV we still have a good match with experimental results, in spite of not simualting any (a,n)/(a,*) reaction. Above 6 MeV, the difference of ouyr yields with experimental ones are due to low accuracy cross sections for the n0 region. Nevertheless, the means match pretty well with experimental results. It is visible it is a great improvement compared to other simulations (Nedis serpent in green and Sources5A in yellow).
 	\centering
 	Comparison with AmBe standards
 	\centering
 	\includegraphics[width=.9\linewidth]{Fig13-OverlapLine}
 \end{frame}
 
-\begin{frame}\frametitle{Comparison with Geant4 NeutronSource example}
-	\includegraphics[width=0.9\linewidth]{Fig14.1-EmergingNeutronsvsGeant.pdf}
-\end{frame}
-
 \section*{Conclusion}
 \begin{frame}\frametitle{Conclusion}
 \begin{itemize}
-\item Validated AmBe neutron spectrum in Geant4
-\item Correctly reproduced AmBe signature peaks
-\item Implemented 1970 and 1975 Geiger-Van Der Zwan Cross sections (not otherwise present in Geant)
-\item Faster execution than full $^{241}\text{Am}$ $\alpha$-decay chain recreation
-\item Useful for analysis of flux and neutron moderation in various media
-\item Future analysis of neutron moderation in water bath
-%TODO: talk about so what, what to do with this now. Why is this useful
+	\item Validated AmBe neutron spectrum in Geant4
+	\item Correctly reproduced AmBe signature peaks
+	\item Implemented 1970 and 1975 Geiger-Van Der Zwan Cross sections (not otherwise present in Geant)
+	\item Faster execution than full $^{241}\text{Am}$ $\alpha$-decay chain recreation
+	\item Useful for analysis of flux and neutron moderation in various media
+	\item Future analysis of neutron moderation in water bath
+	%TODO: talk about so what, what to do with this now. Why is this useful
 \end{itemize}
 \centering
 ~\\Thank you for listening
@@ -363,46 +343,46 @@ Backup Slides
 \end{frame}
 
 \begin{frame}\frametitle{Two group model}
-	Does it actually agree with the two-group neutron moderation model?
-	\begin{columns}[T]
-		\begin{column}{0.5\textwidth}
-			Two group model:
-			\[ \Phi_T = \frac{SL_T^2}{4\pi r \overline{D}(L_T^2-\tau_T)}(e^{-r/L_T}-e^{-r/\sqrt{\tau_T}}) \]
-			describes thermal neutron diffusion and fast to thermal neutron moderation.\\
-			\begin{itemize}
-				\item $\tau_T\rightarrow$ (Fast) neutron age
-				\item $L_t\rightarrow$ Thermal diffusion length
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\centering
-			\includegraphics[width=\linewidth]{FigBackup-NeutronModeration}
-			Neutron moderation $L^2=\frac{1}{6}\overline{r^2}$ [Lamarsh-Baratta 2001]
-		\end{column}
-	\end{columns}
+%NOTE: D is diffusion coefficient, good to know but closely related to the diffusion length via the macroscopic absorbtion cross section
+Does it actually agree with the two-group neutron moderation model?
+\begin{columns}[T]
+	\begin{column}{0.5\textwidth}
+		Two group model:
+		\[ \Phi_T = \frac{SL_T^2}{4\pi r \overline{D}(L_T^2-\tau_T)}(e^{-r/L_T}-e^{-r/\sqrt{\tau_T}}) \]
+		describes thermal neutron diffusion and fast to thermal neutron moderation.\\
+		\begin{itemize}
+			\item $\tau_T\rightarrow$ (Fast) neutron age
+			\item $L_t\rightarrow$ Thermal diffusion length
+		\end{itemize}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{FigBackup-NeutronModeration}
+		Neutron moderation $L^2=\frac{1}{6}\overline{r^2}$ [Lamarsh-Baratta 2001]
+	\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}\frametitle{Equivalent Dose - Preliminary}
-	Calculated dose for outgoing $\gamma$ and neutrons from the water bath and verified against experimental\\
-	Sampling over 0.2~s spectrum
-	\begin{table}
-		\centering
-		\begin{tabular}{|c|c|c|}
-			\hline
-			Particle & Experimental [$\mu\text{Sv/h}$] &  Simulated [$\mu\text{Sv/h}$]\\
-			\hline
-			$\gamma$ & 1.54 & 8.05 \\
-			\hline
-			n & 0.8 & 1.68 \\
-			\hline
-		\end{tabular}
-	\end{table}
-	Notes:
-	\begin{itemize}
-		\item Neutrons measured with Nuclear Enterprises NM-2 dose monitor ($BF_3$)
-		\item Gammas measured with dose monitor calibrated in the 59-1332~keV range
-	\end{itemize}
+Calculated dose for outgoing $\gamma$ and neutrons from the water bath and verified against experimental\\
+Sampling over 0.2~s spectrum
+\begin{table}
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Particle & Experimental [$\mu\text{Sv/h}$] &  Simulated [$\mu\text{Sv/h}$]\\
+		\hline
+		$\gamma$ & 1.54 & 8.05 \\
+		\hline
+		n & 0.8 & 1.68 \\
+		\hline
+	\end{tabular}
+\end{table}
+Notes:
+\begin{itemize}
+	\item Neutrons measured with Nuclear Enterprises NM-2 dose monitor ($BF_3$)
+	\item Gammas measured with dose monitor calibrated in the 59-1332~keV range
+\end{itemize}
 \end{frame}
-
 
 \end{document}
