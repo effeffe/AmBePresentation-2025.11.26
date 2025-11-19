@@ -7,8 +7,8 @@
    viewBox="0 0 699.21261 668.97638"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.1 (93de688d07, 2025-03-30)"
-   sodipodi:docname="AmBe-BreakUpProcesses.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="Fig9.1-AmBe-BreakUpProcesses.svg"
    inkscape:export-filename="Fig2-AmBe-Processes-inkscape.png"
    inkscape:export-xdpi="600"
    inkscape:export-ydpi="600"
@@ -27,11 +27,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.5270844"
-     inkscape:cx="350.03881"
-     inkscape:cy="-192.56878"
-     inkscape:window-width="1920"
-     inkscape:window-height="1008"
+     inkscape:zoom="2.1083376"
+     inkscape:cx="380.86879"
+     inkscape:cy="212.25254"
+     inkscape:window-width="2560"
+     inkscape:window-height="1368"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -115,7 +115,7 @@
        id="linearGradient4"
        inkscape:collect="always">
       <stop
-         style="stop-color:#0000ff;stop-opacity:1;"
+         style="stop-color:#ff0000;stop-opacity:1;"
          offset="0"
          id="stop4" />
       <stop
@@ -127,7 +127,7 @@
        id="linearGradient1"
        inkscape:collect="always">
       <stop
-         style="stop-color:#ff0000;stop-opacity:1;"
+         style="stop-color:#0000ff;stop-opacity:1;"
          offset="0"
          id="stop1" />
       <stop
@@ -944,7 +944,7 @@
        cy="336.159"
        rx="10.080873"
        ry="10.416903"
-       inkscape:export-filename="AmBe-BreakUpProcesses.png"
+       inkscape:export-filename="Fig9.1-AmBe-BreakUpProcesses.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <ellipse
@@ -1070,9 +1070,9 @@
        transform="translate(436.18943,185.05832)"><tspan
          x="88.865234"
          y="206.69638"
-         id="tspan2"><tspan
+         id="tspan18"><tspan
            style="font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal'"
-           id="tspan1">n</tspan></tspan></text>
+           id="tspan17">n</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-linecap:round;stroke-linejoin:miter;paint-order:normal"
@@ -1102,9 +1102,9 @@
        transform="translate(1.9926514,243.45583)"><tspan
          x="182.12695"
          y="152.88779"
-         id="tspan4"><tspan
+         id="tspan20"><tspan
            style="font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal'"
-           id="tspan3">⁹Be</tspan></tspan></text>
+           id="tspan19">⁹Be</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text417"
@@ -1112,9 +1112,9 @@
        transform="translate(-6.5000006,58.5)"><tspan
          x="393.82617"
          y="278.56357"
-         id="tspan6"><tspan
+         id="tspan22"><tspan
            style="font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal'"
-           id="tspan5">⁹Be*</tspan></tspan></text>
+           id="tspan21">⁹Be*</tspan></tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker426_Fnone_S-000000)"
        d="M 443.07463,277.54247 524.39367,256.0366"
@@ -1133,9 +1133,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect432);display:inline;fill:#000000;fill-opacity:1;stroke-linecap:round;stroke-linejoin:miter;paint-order:normal"><tspan
          x="343.42188"
          y="408.2706"
-         id="tspan8"><tspan
+         id="tspan24"><tspan
            dx="0 13.175995 11.519989 13.46402 8.6640015 8.6640015 13.53598 9.4319916 13.53598 14.759995"
-           id="tspan7">Scattered </tspan></tspan></text>
+           id="tspan23">Scattered </tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text433"
@@ -1143,7 +1143,7 @@
        transform="translate(-16.613224,64.5)"><tspan
          x="327.96484"
          y="376.01083"
-         id="tspan9">Scattered ɑ</tspan></text>
+         id="tspan25">Scattered ɑ</tspan></text>
     <ellipse
        style="fill:url(#linearGradient45)"
        id="path1-47-5-8-1"
@@ -1179,7 +1179,7 @@
        transform="translate(218.27577,-226.38089)"><tspan
          x="327.96484"
          y="376.01083"
-         id="tspan10">ɑ</tspan></text>
+         id="tspan26">ɑ</tspan></text>
     <ellipse
        style="fill:url(#linearGradient49)"
        id="path1-47-5-8-1-4"
@@ -1222,14 +1222,14 @@
        transform="translate(208.46603,-302.64095)"><tspan
          x="327.96484"
          y="376.01083"
-         id="tspan11">⁵He</tspan></text>
+         id="tspan27">⁵He</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker426_Fnone_S-000000)"
        d="M 67.058029,339.70786 351.33868,394.14458"
        id="path433"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="css"
+       sodipodi:nodetypes="cs"
        inkscape:export-filename="Fig2-AmBe-Processes-inkscape.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
@@ -1471,9 +1471,9 @@
        transform="translate(-1.500786,4.1007596)"><tspan
          x="182.12695"
          y="152.88779"
-         id="tspan13"><tspan
+         id="tspan29"><tspan
            style="font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal'"
-           id="tspan12">⁹Be</tspan></tspan></text>
+           id="tspan28">⁹Be</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text417-9"
@@ -1481,9 +1481,9 @@
        transform="translate(-9.993438,-180.85507)"><tspan
          x="393.82617"
          y="278.56357"
-         id="tspan15"><tspan
+         id="tspan31"><tspan
            style="font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal'"
-           id="tspan14">⁹Be*</tspan></tspan></text>
+           id="tspan30">⁹Be*</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text433-2"
@@ -1491,14 +1491,14 @@
        transform="translate(-20.106661,-174.85507)"><tspan
          x="327.96484"
          y="376.01083"
-         id="tspan16">Scattered ɑ</tspan></text>
+         id="tspan32">Scattered ɑ</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker426_Fnone_S-000000-5)"
        d="M 63.564592,100.35279 347.84524,154.78951"
        id="path433-0"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="css"
+       sodipodi:nodetypes="cs"
        inkscape:export-filename="Fig2-AmBe-Processes-inkscape.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
