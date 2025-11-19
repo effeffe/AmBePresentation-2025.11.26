@@ -1,0 +1,11 @@
+main-blx.bib
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.snm
+*.nav
