@@ -74,6 +74,7 @@
 \begin{frame}\frametitle{$^{241}$Am-$^9$Be Neutron source}
 %After intro of title
 %AmBe sources are neutron sources with a long half life...
+No accurate open source simulation - others are suboptimal\\
 Long half life and stable flux over a 10 - 15 year working life\\
 Plethora of uses:
 \begin{itemize}
@@ -84,7 +85,6 @@ Plethora of uses:
 	\item Industrial (e.g. well logging via $^1\text{H}(n,\gamma)^2\text{H}$) %moisture 
 \end{itemize}
 %Its utility makes it important to have an open source simulation, which is as precise and comprehensive as possible. Currently there ar eno accurate open source simulations, and other closed-source simulations are not flexible nor as accurate as we would like
-No accurate open source simulation - others are suboptimal
 \end{frame}
 
 \section*{Theoretical Framework}
@@ -92,8 +92,8 @@ No accurate open source simulation - others are suboptimal
 %AmBe sources are composed of [...] The reaction of interest is [...], which proceeds with a Q value of. The generated 12C can be in either ground, first or Hoyle state, depending on the initial alpha energy, cross sections and neutron energy. An example casing is here depicted, with a screw hole at the top and the AmBe mixture in red
 \begin{columns}[T]
 \begin{column}{0.7\textwidth}
-	Mixture of $\text{AmO}_2$ and $^9\text{Be}$ powder. $>99\%~~^{241}\text{Am}$\\
-	Stainless-steel casing\\
+	Mixture of $\text{AmO}_2$ and $^9\text{Be}$ powder --- Stainless-steel\\
+	$>99\%~~^{241}\text{Am}$\\
 	$^{241}\text{Am}$ $\alpha$ emission:\\
 	\begin{table}
 	\centering
@@ -159,7 +159,7 @@ No accurate open source simulation - others are suboptimal
 
 
 \begin{frame}\frametitle{Fast reaction}
-%REgarding the fast reactions, as we said this can populate excited states of carbon, which then decay emitting 4.4 and 3.2 gammas. These excited states kinematically map to 3 regions, i.e. the higher energy is n0, then n2 and then n2 foing towards 0. Breakup reactions contribute to the 0 to 1 MeV region, and fission neutron can contribute to the entire spectrum range.
+%We can hence see the expected neutron distribution as analysed by G-DVZ, where neutrons are represented by the populated carbon level. n0 corresponds to the ground state, n1 to the first excited, producing a 4.4 MeV gamma, n2 to the second excited state, the hoyle state, which may produce a 3.2MeV gamma. Eventually we see n_b as beryllium breakup, producing neutrons in the 0 to 1 MeV region.
 \begin{columns}[T]
 \begin{column}{0.7\textwidth}
 	\centering
@@ -177,7 +177,7 @@ AmBe neutron distribution per $^{12}\text{C}$ state [Geiger-Van Der Zwan 1975]
 
 \section*{Current Status}
 \begin{frame}\frametitle{Current status}
-%Currently, there is an AmBe simulation, whihc simulates $^{241}$Am decay emitting $\alphas$ interacting with beryllium. The issue is, Geant4 lacks differential cross sections and hence crucial features are lacking from the resulting neutron spectrum.
+%Currently, there is an AmBe simulation, the NeutronSource simulation, which simulates $^{241}$Am decay interacting with beryllium. The issue is, Geant4 lacks differential cross sections and hence crucial features from the resulting neutron spectrum.
 \begin{itemize}
 		\item Geant4 has built in example in extended/hadronic/NeutronSource
 		\item Simulates $^{241}\text{Am}$ $\alpha$-decay
@@ -188,12 +188,11 @@ AmBe neutron distribution per $^{12}\text{C}$ state [Geiger-Van Der Zwan 1975]
 	\includegraphics[width=.75\textwidth]{Fig6.1-AmBe_G4Original.pdf}
 Geant4 extended/hadronic/NeutronSource example
 \centering
-%In particular, missing signature peaks of AmBe source, i.e. present the 3.3MeV one, but 5,6.8,7.7 and shoulder at 9.5 is missing
 \end{frame}
 
 \section*{Primary Generator}
 \begin{frame}\frametitle{Implementation}
-%For this reason, we want to make a simulation that is as accurate as possible, efficient, is comprehensive of the reactions occouring and is open-source, so that it can be used for a plethora of applications. For this reason, we chose to directly simulate the neutron and carbon-ion from the fast process, which makes simulations a lot faster considering an emission of 2.27E6 fast neutron per curie per second. This way, we spare about 16300 null events per emerging neutron. We implement this via rejection sampling techniques, adopting integrated cross-sections and differential cross sections in the form of Legendre polynomials from Geiger and van Der Zwan data from 1970 to 1976.
+%For this reason, we want to make a simulation that is as accurate as possible, efficient, is comprehensive of the reactions occouring and is open-source, so that it can be used for a plethora of applications. We chose to directly simulate the neutron and carbon-ion from the fast process, which makes simulations a lot faster considering an emission of 2.27E6 fast neutron per curie per second. This way, we spare about 16300 null events per emerging neutron. We implement this via rejection sampling techniques, adopting integrated cross-sections and differential cross sections in the form of Legendre polynomials from Geiger and van Der Zwan data from 1970 to 1976.
 Aim: make the simulation as accurate as possible, efficient, open-source, complete
 \begin{itemize}
 	\item Simulate $n$ and $^{12}\text{C}$ directly\\
@@ -252,9 +251,10 @@ Aim: make the simulation as accurate as possible, efficient, open-source, comple
 		\item $^{9}\text{Be}^*$ angular decay information
 		\item Other break-up channels more suppressed at interaction energy ($<5$~MeV)\\e.g. $^{9}\text{Be}^* \rightarrow\alpha+ ^{5}\text{He}$
 	\end{itemize}
+Only have $(n,2n)$ break-up reactions
 \end{minipage}  
 \begin{minipage}{\textwidth}
-	\includegraphics[width=\linewidth]{Fig9.1-AmBe-BreakUpProcesses.png}
+	\includegraphics[width=0.9\linewidth]{Fig9.1-AmBe-BreakUpProcesses.png}
 \end{minipage}  
 \end{frame}
 
@@ -262,7 +262,7 @@ Aim: make the simulation as accurate as possible, efficient, open-source, comple
 \section*{Emerging Neutrons}
 
 \begin{frame}\frametitle{Simulation Results - Emerging Neutrons}
-%We can here see the emerging neutrons from the source, mapped for carbon excitation region
+%We can now put all together. Here we see the emerging neutrons from the source, mapped for carbon excitation region
 \centering
 Neutrons emerging from source casing (simulation)
 \centering
@@ -281,8 +281,9 @@ Neutrons emerging from source casing (simulation)
 
 \begin{frame}\frametitle{Simulation Results - AmBe carbon $\gamma$}
 %Then we have the carbon gammas being created. These are Doppler shifter as carbon decays in flight. The production ratio matches cross section values of 26:10:64=n0:n1:n2 wrt to initial neutrons
+$26:10:64=n_0:n_1:n_2$ as expected from cross section
 	\centering
-	\includegraphics[width=\linewidth]{Fig12.1-secondaryGammas}
+	\includegraphics[width=0.9\linewidth]{Fig12.1-secondaryGammas}
 \end{frame}
 
 %\section*{Model Comparison}
@@ -293,7 +294,7 @@ Neutrons emerging from source casing (simulation)
 
 \begin{frame}\frametitle{Model comparison}
 %spend 2-3 minutes on this
-%Focusing on the emerging neutrons, we can compare these with other results, experimental and simulated. Our simulation matches experimental results pretty well, especially between 1 and 6 MeV. Below 1 MeV we still have a good match with experimental results, in spite of not simualting any (a,n)/(a,*) reaction. Above 6 MeV, the difference of ouyr yields with experimental ones are due to low accuracy cross sections for the n0 region. Nevertheless, the means match pretty well with experimental results. It is visible it is a great improvement compared to other simulations (Nedis serpent in green and Sources5A in yellow).
+%Focusing on the emerging neutrons, we can compare these with other results, experimental and simulated. Our simulation, in red, matches experimental results pretty well, especially between 1 and 6 MeV. Below 1 MeV we still have a good match with experimental results, in spite of not simualting any (a,n)/(a,*) reaction. Above 6 MeV, there is a difference of our yields with respect to experimental ones, due to low accuracy in the cross sections for the n0 region. Nevertheless, the distribution mean matches pretty well with experimental results. It is visible it is a great improvement compared to other simulations (Nedis serpent in green and Sources5A in yellow).
 	\centering
 	Comparison with AmBe standards
 	\centering
@@ -305,11 +306,11 @@ Neutrons emerging from source casing (simulation)
 %
 %Link with AmBe Bath application, analysis for neutron moderation
 \begin{itemize}
-	\item Validated AmBe neutron spectrum in Geant4
+	\item Validated AmBe neutron spectrum in Geant4 - Open Source simulation available
 	\item Correctly reproduced AmBe signature peaks
-	\item Implemented 1970 and 1975 Geiger-Van Der Zwan Cross sections (not otherwise present in Geant)
+	\item Implemented 1970 and 1975-1976 Geiger-Van Der Zwan Cross sections (not otherwise present in Geant)
 	\item Faster execution than full $^{241}\text{Am}$ $\alpha$-decay chain recreation
-	\item Useful for analysis of flux and neutron moderation in various media
+	\item Useful for analysis of flux, neutron moderation and dose in various media
 	\item Future analysis of neutron moderation in water bath
 \end{itemize}
 \centering
@@ -439,7 +440,7 @@ Backup Slides
 		\item $\gamma$ spectrum from AmBe using hpGe for to verify production rate of fission products and dose rate
 	\end{itemize}
 	\centering
-	Measurements ongoing...
+	Measurements and analysis ongoing...
 \end{frame}
 
 \begin{frame}\frametitle{Two group model}
